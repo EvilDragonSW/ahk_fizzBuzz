@@ -15,6 +15,8 @@ function Home() {
 
             <main className={styles.main}>
                 <h1>FizzBuzz - Bewerber Quiz</h1>
+
+                <input placeholder="enter digit"/>
             </main>
         </>
     );

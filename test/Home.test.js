@@ -15,7 +15,11 @@ describe("<Home/>...", () => {
             screen.getByRole("heading", {name: "FizzBuzz - Bewerber Quiz", level: 1});
         });
 
-        it.todo("input for target digit");
+        it("input for target digit", () => {
+            render(<Home/>);
+
+            screen.getByPlaceholderText("enter digit", {});
+        });
 
         it.todo("submit button");
 
