@@ -21,7 +21,11 @@ describe("<Home/>...", () => {
             screen.getByPlaceholderText("enter digit", {});
         });
 
-        it.todo("submit button");
+        it("submit button", () => {
+            render(<Home/>);
+
+            screen.getByRole("button", {name: "submit"});
+        });
 
         it.todo("hint text that a digit greater 0 has to be submitted");
 

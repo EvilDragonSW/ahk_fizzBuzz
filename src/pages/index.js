@@ -17,6 +17,7 @@ function Home() {
                 <h1>FizzBuzz - Bewerber Quiz</h1>
 
                 <input placeholder="enter digit"/>
+                <button>submit</button>
             </main>
         </>
     );
