@@ -16,6 +16,7 @@ function Home() {
             <main className={styles.main}>
                 <h1>FizzBuzz - Bewerber Quiz</h1>
 
+                <p>digit greater 0 has to be submitted</p>
                 <input placeholder="enter digit"/>
                 <button>submit</button>
             </main>

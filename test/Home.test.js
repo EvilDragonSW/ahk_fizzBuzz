@@ -27,7 +27,11 @@ describe("<Home/>...", () => {
             screen.getByRole("button", {name: "submit"});
         });
 
-        it.todo("hint text that a digit greater 0 has to be submitted");
+        it("hint text that a digit greater 0 has to be submitted", () => {
+            render(<Home/>);
+
+            screen.getByText("digit greater 0 has to be submitted", {});
+        });
 
         describe("result when...", () => {
 
