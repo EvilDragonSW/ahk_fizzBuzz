@@ -1,5 +1,6 @@
-import {render, screen} from "@testing-library/react";
+import {fireEvent, render, screen, waitFor} from "@testing-library/react";
 import Home, {EMPTY_RESULT_HINT} from "@pages/";
+import UserEvent from "@testing-library/user-event";
 
 describe("<Home/>...", () => {
 
@@ -38,7 +39,7 @@ describe("<Home/>...", () => {
             it("only digits has to be rendered", async () => {
                 render(<Home/>);
 
-                submitFormWith(2);
+                await submitFormWith("feg");
 
                 // hint should be disappeared
                 expect(screen.queryByText(EMPTY_RESULT_HINT, {selector: ".result"})).toBeNull();
@@ -69,9 +70,10 @@ describe("<Home/>...", () => {
         await screen.findByText(EMPTY_RESULT_HINT, {selector: ".result"});
     });
 
-    function submitFormWith(digit){
-        throw new Error("not implemented yet");
-    }
+    const submitFormWith = async (digit) => {
+        await UserEvent.type(screen.getByPlaceholderText("enter digit", {}), digit);
+        fireEvent.click(screen.getByRole("button", {name: "submit"}));
+    };
 
     function gainFocusOnInput() {
         throw new Error("not implemented yet");
